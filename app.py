@@ -1,4 +1,3 @@
-1
 from flask import Flask, render_template, request, jsonify
 import requests
 import os
@@ -65,4 +64,4 @@ def get_weather(city: str):
 
 if __name__ == "__main__":
     # Debug=True reloads the app automatically when you save changes
-    app.run(debug=True)
+    app.run()
