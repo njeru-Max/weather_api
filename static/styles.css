@@ -1,0 +1,116 @@
+/* Base styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: linear-gradient(to right, #e0f7fa, #80deea);
+  color: #333;
+  transition: background 0.3s, color 0.3s;
+}
+
+h1 {
+  text-align: center;
+  color: #222;
+}
+
+form {
+  text-align: center;
+  margin: 20px 0;
+}
+
+input[type="text"] {
+  padding: 10px;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 15px;
+  margin-left: 10px;
+  border: none;
+  background-color: #4a90e2;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #357ab8;
+}
+
+.weather-box, .offline-container {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.offline-container {
+  border: 2px dashed #ff9800;
+}
+
+/* Header with toggle */
+header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+#theme-toggle {
+  background: none;
+  border: 2px solid #4a90e2;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  color: #333;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+#theme-toggle:hover {
+  background: #4a90e2;
+  color: white;
+}
+
+/* 🌙 Dark mode overrides */
+body.dark {
+  background: linear-gradient(to right, #232526, #414345);
+  color: #f0f0f0;
+}
+
+body.dark h1 {
+  color: #fff;
+}
+
+body.dark input[type="text"] {
+  background: #2c2c2c;
+  border: 1px solid #555;
+  color: #fff;
+}
+
+body.dark button {
+  background-color: #1e88e5;
+  color: #fff;
+}
+
+body.dark #theme-toggle {
+  border-color: #bbb;
+  color: #eee;
+}
+
+body.dark #theme-toggle:hover {
+  background: #666;
+  color: #fff;
+}
+
+body.dark .weather-box,
+body.dark .offline-container {
+  background: rgba(40, 40, 40, 0.9);
+  color: #f0f0f0;
+  border-color: #777;
+}
