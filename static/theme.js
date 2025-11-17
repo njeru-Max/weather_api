@@ -1,6 +1,14 @@
 const toggleBtn = document.getElementById("theme-toggle");
 const body = document.body;
 
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/static/service_worker.js')
+      .then(reg => console.log('Service Worker registered', reg))
+      .catch(err => console.error('Service Worker registration failed', err));
+  });
+}
+
 // Load saved theme preference
 if (localStorage.getItem("theme") === "dark") {
   body.classList.add("dark");
