@@ -3,7 +3,9 @@ import requests
 import os
 from dotenv import load_dotenv
 
-load_dotenv()  # Load environment variables from .env file
+# Only load .env locally; Render ignores this anyway
+if os.environ.get("RENDER") != "true":
+    load_dotenv()
 
 app = Flask(__name__)
 
