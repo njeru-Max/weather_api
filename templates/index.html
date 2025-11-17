@@ -4,8 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weather App</title>
+
+  <!-- CSS -->
   <link rel="stylesheet" href="/static/styles.css">
-  <link rel="manifest" href="/manifest.json">
+
+  <!-- CORRECT manifest path -->
+  <link rel="manifest" href="/static/manifest.json">
+
+  <!-- Theme Color (needed for PWA install UI) -->
+  <meta name="theme-color" content="#2c3e50">
 </head>
 <body>
   <header>
@@ -32,6 +39,17 @@
   </div>
   {% endif %}
 
+  <!-- Theme JS -->
   <script src="/static/theme.js"></script>
+
+  <!-- REGISTER SERVICE WORKER -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/static/service_worker.js")
+        .then(() => console.log("Service Worker Registered"))
+        .catch(err => console.error("SW Registration Failed", err));
+    }
+  </script>
+
 </body>
 </html>
